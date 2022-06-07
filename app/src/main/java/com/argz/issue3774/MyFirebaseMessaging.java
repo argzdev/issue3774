@@ -26,7 +26,7 @@ public class MyFirebaseMessaging extends FirebaseInAppMessagingDisplayImpl{
 
             // Then we put on HashMap this object to be called later
             this.InAppMessages.put(campaignId, inAppMessageObject);
-            Log.d(TAG, "displayMessage: campaign" + campaignId + " saved to hashmap");
+            Log.d(TAG, "displayMessage: campaign " + campaignId + " saved to hashmap");
         } catch (Exception e) {
             Log.e(TAG, e.toString());
         }
