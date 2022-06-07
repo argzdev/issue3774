@@ -15,4 +15,4 @@
       - The log `markAsImpressionDetected: {id}` is displayed twice. 
 4. Now, click the `TRIGGER EVENT` button again to retrieve the 2 campaigns.
       - The logs will show `I/FIAM.Headless: Already impressed campaign {id} ? : true`, however only one campaign has been marked impressed, the other campaign will show false.
-      - *This shows that the `callbacks.impressionDetected()` was indeed called twice, however did not mark the 2nd campaign as impressed.
+      - *This shows that the `callbacks.impressionDetected()` was indeed called twice, however did not mark the 2nd campaign as impressed.*
