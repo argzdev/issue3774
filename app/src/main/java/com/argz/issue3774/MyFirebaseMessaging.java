@@ -12,7 +12,7 @@ import java.util.HashMap;
 
 public class MyFirebaseMessaging extends FirebaseInAppMessagingDisplayImpl{
     private static final String TAG = "MyFirebaseMessaging";
-    private final HashMap<String, HashMap> InAppMessages = new HashMap<>();
+    public final HashMap<String, HashMap> InAppMessages = new HashMap<>();
 
     @Override
     public void displayMessage(@NonNull InAppMessage inAppMessage, @NonNull FirebaseInAppMessagingDisplayCallbacks callbacks) {

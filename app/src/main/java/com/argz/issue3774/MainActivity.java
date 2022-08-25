@@ -3,14 +3,18 @@ package com.argz.issue3774;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import com.google.firebase.inappmessaging.FirebaseInAppMessaging;
 import com.google.firebase.inappmessaging.FirebaseInAppMessagingDisplayCallbacks;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.HashMap;
+import java.util.Map;
 
+public class MainActivity extends AppCompatActivity {
+    private static final String TAG = "MyFirebaseMessaging";
     Button triggerEvents;
     Button markImpressed;
     MyFirebaseMessaging myFirebaseMessaging;
@@ -30,8 +34,9 @@ public class MainActivity extends AppCompatActivity {
             FirebaseInAppMessaging.getInstance().triggerEvent("another_main_screen_opened");
         });
         markImpressed.setOnClickListener(view -> {
-            myFirebaseMessaging.markAsImpressionDetected("replace_with_campaign_id_of_event1");
-            myFirebaseMessaging.markAsImpressionDetected("replace_with_campaign_id_of_event2");
+            for (Map.Entry<String, HashMap> set : myFirebaseMessaging.InAppMessages.entrySet()) {
+                myFirebaseMessaging.markAsImpressionDetected(set.getKey());
+            }
         });
     }
 
